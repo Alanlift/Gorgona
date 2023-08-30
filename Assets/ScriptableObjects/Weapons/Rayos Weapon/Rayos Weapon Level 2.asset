@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb104e841f8b64641afdfd8d553ff5f9, type: 3}
+  m_Name: Rayos Weapon Level 2
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3488164880672418846, guid: fef45e42073f28342b838d0d317bc190, type: 3}
+  damage: 5
+  speed: 20
+  cooldownDuration: 2
+  pierce: 1
+  level: 2
+  nextLevelPrefab: {fileID: 0}
+  name: Rayos Nivel 2
+  description: "Le aumenta el da\xF1o a los rayos"
+  icon: {fileID: 768861347, guid: e7465b66a526a9245b4afbfeb891f363, type: 3}

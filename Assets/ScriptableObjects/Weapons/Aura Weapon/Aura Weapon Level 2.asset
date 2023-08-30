@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb104e841f8b64641afdfd8d553ff5f9, type: 3}
+  m_Name: Aura Weapon Level 2
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8700691800616597353, guid: 47a114f402248f74ea4423d48c83c2a4, type: 3}
+  damage: 5
+  speed: 0
+  cooldownDuration: 2.5
+  pierce: 0
+  level: 2
+  nextLevelPrefab: {fileID: 0}
+  name: Aura electrizante Nivel 2
+  description: "Reduce el tiempo de activaci\xF3n"
+  icon: {fileID: 21300000, guid: 2dfad1c1810b82b47915c98734d43231, type: 3}
