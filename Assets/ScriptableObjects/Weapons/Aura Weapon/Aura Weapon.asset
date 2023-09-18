@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Aura Weapon
   m_EditorClassIdentifier: 
   prefab: {fileID: 8700691800616597353, guid: 47a114f402248f74ea4423d48c83c2a4, type: 3}
-  damage: 5
+  damage: 3
   speed: 0
   cooldownDuration: 3
   pierce: 0
@@ -21,4 +21,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 6994372328519578074, guid: 83850338bbf0a084c941c34af1013d00, type: 3}
   name: Aura electrizante
   description: "Hace da\xF1o por segundo dentro del area"
-  icon: {fileID: 21300000, guid: 2dfad1c1810b82b47915c98734d43231, type: 3}
+  icon: {fileID: 21300000, guid: 4f8fbbce1b2325c44b1298c80e9ab44b, type: 3}

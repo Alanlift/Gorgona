@@ -21,4 +21,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 4482714466945879612, guid: 1759a3cf0a853d4468410d1e5a6c7305, type: 3}
   name: Rayos
   description: "Dispara un rayo a la direcci\xF3n d\xF3nde camine el jugador"
-  icon: {fileID: 768861347, guid: e7465b66a526a9245b4afbfeb891f363, type: 3}
+  icon: {fileID: 21300000, guid: 388ca37f3f4816942982babe3189b671, type: 3}

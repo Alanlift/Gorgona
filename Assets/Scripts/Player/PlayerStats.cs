@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -129,6 +130,11 @@ public class PlayerStats : MonoBehaviour
     public int weaponIndex;
     public int passiveItemIndex;
 
+    [Header("UI")]
+    public Image healthBar;
+    public Image expBar;
+    public Text levelText;
+
     public GameObject firstPassiveItemTest, secondPassiveItemTest;
 
     public GameObject secondWeaponTest;
@@ -159,6 +165,9 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentMightDisplay.text = "Poder: " + currentMight;
         GameManager.instance.currentProjectileSpeedDisplay.text = "Velocidad Proyectil: " + currentProjectileSpeed;
         GameManager.instance.currentMagnetDisplay.text = "Imán: " + currentMagnet;
+
+        UpdateHealthBar();
+        UpdateExpBar();
     }
 
     private void Update()
@@ -179,6 +188,7 @@ public class PlayerStats : MonoBehaviour
     {
         experience += amount;
         LevelUpChecker();
+        UpdateExpBar();
     }
 
     void LevelUpChecker()
@@ -190,7 +200,20 @@ public class PlayerStats : MonoBehaviour
             experience -= experienceCap;
             experienceCap += experienceCapIncrease;
             GameManager.instance.StartLevelUp();
+            UpdateLevelText();
         }
+    }
+
+    void UpdateExpBar()
+    {
+        //Actualizamos la barra de exp
+        expBar.fillAmount = (float)experience / experienceCap;
+    }
+
+    void UpdateLevelText()
+    {
+        //Actualizamos el nivel en el texto
+        levelText.text = "LV " + level.ToString();
     }
     public void TakeDamage(float damage)
     {
@@ -204,7 +227,15 @@ public class PlayerStats : MonoBehaviour
             {
                 Kill();
             }
+
+            UpdateHealthBar();
         }     
+    }
+
+    void UpdateHealthBar()
+    {
+        //Update the health bar
+        healthBar.fillAmount = currentHealth /characterData.Health;
     }
 
     public void Kill()

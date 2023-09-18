@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb104e841f8b64641afdfd8d553ff5f9, type: 3}
   m_Name: Aura Weapon Level 2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8700691800616597353, guid: 47a114f402248f74ea4423d48c83c2a4, type: 3}
-  damage: 5
+  prefab: {fileID: 8700691800616597353, guid: dfbaa84a922be4541bc6e8a29371a768, type: 3}
+  damage: 3
   speed: 0
   cooldownDuration: 2.5
   pierce: 0
   level: 2
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 6994372328519578074, guid: bd6a0464718fde345911b03d360990ec, type: 3}
   name: Aura electrizante Nivel 2
   description: "Reduce el tiempo de activaci\xF3n"
-  icon: {fileID: 21300000, guid: 2dfad1c1810b82b47915c98734d43231, type: 3}
+  icon: {fileID: 21300000, guid: 4f8fbbce1b2325c44b1298c80e9ab44b, type: 3}

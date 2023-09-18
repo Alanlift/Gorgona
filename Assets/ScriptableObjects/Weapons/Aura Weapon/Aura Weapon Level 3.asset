@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb104e841f8b64641afdfd8d553ff5f9, type: 3}
-  m_Name: Rayos Weapon Level 2
+  m_Name: Aura Weapon Level 3
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3488164880672418846, guid: 16174ec2d164b2349a43d5cadb9aacb7, type: 3}
+  prefab: {fileID: 8700691800616597353, guid: 2d0e8136171d3f74596cf7c8796e7116, type: 3}
   damage: 5
-  speed: 20
-  cooldownDuration: 2
-  pierce: 1
+  speed: 0
+  cooldownDuration: 2.5
+  pierce: 0
   level: 2
   nextLevelPrefab: {fileID: 0}
-  name: Rayos Nivel 2
-  description: "Le aumenta el da\xF1o a los rayos"
-  icon: {fileID: 21300000, guid: 388ca37f3f4816942982babe3189b671, type: 3}
+  name: Aura electrizante Nivel 3
+  description: "Aumenta el da\xF1o en 2"
+  icon: {fileID: 21300000, guid: 4f8fbbce1b2325c44b1298c80e9ab44b, type: 3}
