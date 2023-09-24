@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseScreen;
     public GameObject resultsScreen;
     public GameObject levelUpScreen;
+    public GameObject experienceBar;
 
     //Stats que se mostraran
     public Text currentHealthDisplay;
@@ -107,6 +108,7 @@ public class GameManager : MonoBehaviour
             previousState = currentState;
             ChangeState(GameState.Paused);
             Time.timeScale = 0f; //Para el juego
+            experienceBar.SetActive(false);
             pauseScreen.SetActive(true);
         }
     }
@@ -117,6 +119,7 @@ public class GameManager : MonoBehaviour
         {
             ChangeState(previousState);
             Time.timeScale = 1f;
+            experienceBar.SetActive(true);
             pauseScreen.SetActive(false);
         }
     }
@@ -140,6 +143,7 @@ public class GameManager : MonoBehaviour
 
     void DisableScreens()
     {
+        experienceBar.SetActive(true);
         pauseScreen.SetActive(false);
         resultsScreen.SetActive(false);
         levelUpScreen.SetActive(false);

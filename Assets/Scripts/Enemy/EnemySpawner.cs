@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("Spawn Positions")]
     public List<Transform> relativeSpawnPoints; //Lista de puntos de spawns de los enemigos
     Transform player;
-    private bool waveStarted = false;
+    private bool isWaveActive = false;
 
     void Start()
     {
@@ -48,10 +48,9 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (!waveStarted && currentWaveCount < waves.Count && waves[currentWaveCount].waveQuota == currentWaveQuota)
+        if (currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0 && !isWaveActive)
         {
         StartCoroutine(BeginNextWave());
-        waveStarted = true; // set waveStarted to true to prevent the coroutine from starting multiple times
         }
 
         spawnTimer += Time.deltaTime;
@@ -71,20 +70,22 @@ public class EnemySpawner : MonoBehaviour
             currentWaveQuota += enemyGroup.enemyCount;
         }
         waves[currentWaveCount].waveQuota = currentWaveQuota;
-        Debug.LogWarning(currentWaveQuota);
+        Debug.LogWarning("Cantidad de enemigos " + currentWaveQuota);
     }
 
     IEnumerator BeginNextWave()
     {
+        isWaveActive = true; // set waveStarted to true to prevent the coroutine from starting multiple times
         //Wave para "waveInterval" segundos antes de que inicie la siguiente wave
         yield return new WaitForSeconds(waveInterval);
         {
             //Si hay más waves que vayan a iniciar despues de la wave actual, nos movemos a la siguiente wave
             if(currentWaveCount < waves.Count -1)
             {
+                maxEnemiesAllowed *= 2;
                 currentWaveCount++;
                 CalculateWaveQuota();
-                waveStarted = false; // reset waveStarted to false so that the next wave can be started
+                isWaveActive = false; // reset isWaveActive to false so that the next wave can be started
             }
         }
     }

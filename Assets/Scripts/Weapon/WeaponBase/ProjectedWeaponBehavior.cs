@@ -7,14 +7,16 @@ public class ProjectedWeaponBehavior : MonoBehaviour //Comportamiento de todas l
 {
     public WeaponScriptableObject weaponData;
 
-    protected Vector3 direction;
+    protected GameObject direction;
     public float destroyAfterSeconds;
+    public bool isDestroyed;
 
     //Current stats
     protected float currentDamage;
     protected float currentSpeed;
     protected float currentCooldownDuration;
     protected int currentPierce;
+
     
     void Awake()
     {
@@ -30,19 +32,20 @@ public class ProjectedWeaponBehavior : MonoBehaviour //Comportamiento de todas l
     }
     protected virtual void Start()
     {
+        isDestroyed = false;
         Destroy(gameObject, destroyAfterSeconds);
     }
 
-    public void DirectionChecker(Vector3 dir) //Para cambiar las rotaciones y las escalas(que se flipee)
+    public void DirectionChecker(GameObject dir) //Para cambiar las rotaciones y las escalas(que se flipee)
     {
         direction = dir;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.position - direction.transform.position), 200 * Time.deltaTime);
 
-        float dirx = direction.x;
+        /*float dirx = direction.x;
         float diry = direction.y;
 
         Vector3 scale = transform.localScale;
         Vector3 rotation = transform.rotation.eulerAngles;
-
         if(dirx < 0 && diry == 0) //left
         {
             scale.x *= -1;
@@ -68,6 +71,7 @@ public class ProjectedWeaponBehavior : MonoBehaviour //Comportamiento de todas l
         }
         transform.localScale = scale;
         transform.rotation = Quaternion.Euler(rotation); //
+        */
     }
 
     protected void OnTriggerEnter2D(Collider2D col)
@@ -96,5 +100,10 @@ public class ProjectedWeaponBehavior : MonoBehaviour //Comportamiento de todas l
         {
             Destroy(gameObject);
         }
+    }
+
+    void OnDestroy()
+    {
+        isDestroyed = true;
     }
 }

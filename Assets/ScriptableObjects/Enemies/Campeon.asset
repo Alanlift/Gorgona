@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c799c537d485a143ac37ecc6d22fa35, type: 3}
   m_Name: Campeon
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3855592135270341579, guid: 5a4b7d88f66724844b9b918b57140050, type: 3}
-  health: 10
+  health: 50
   moveSpeed: 2
   damage: 30

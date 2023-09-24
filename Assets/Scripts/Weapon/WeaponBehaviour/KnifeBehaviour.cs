@@ -4,14 +4,51 @@ using UnityEngine;
 
 public class KnifeBehaviour : ProjectedWeaponBehavior
 {
+    public Sprite[] spritesRayo;
+    SpriteRenderer spriteRenderer;
+    GameObject target = null;
+    
     protected override void Start()
     {
         base.Start();
+        int spritesRan = Random.Range(0, spritesRayo.Length);
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = spritesRayo[spritesRan];
     }
 
 
     void Update()
     {
-        transform.position += direction * currentSpeed * Time.deltaTime; //Movimiento del cuchillo
+        EncontrarEnemigoCercano();
+        Vector2 direction = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
+        transform.up = direction;
+        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.position - target.transform.position), 200 * Time.deltaTime);
+        //DirectionChecker(target);
+        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, currentSpeed * Time.deltaTime);
+        
+        //transform.position += direction * currentSpeed * Time.deltaTime; //Movimiento del cuchillo
+    }
+
+    public void changeTarget(GameObject newTarget)
+    {
+        target = newTarget;
+    }
+
+    void EncontrarEnemigoCercano()
+    {
+        float lowerEnemyDistance = Mathf.Infinity;
+        GameObject closestEnemy = null;
+        GameObject[] enemyDistances = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject currentEnemy in enemyDistances)
+        {
+            float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
+            if(distanceToEnemy < lowerEnemyDistance)
+            {
+                lowerEnemyDistance = distanceToEnemy;
+                closestEnemy = currentEnemy;
+            }
+        }
+            //Debug.DrawLine(transform.position, closestEnemy.transform.position); (Ver recorrido)
+        changeTarget(closestEnemy);      
     }
 }

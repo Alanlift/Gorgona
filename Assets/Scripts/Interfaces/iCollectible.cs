@@ -1,4 +1,5 @@
+using UnityEngine;
 public interface ICollectible
 {
-    void Collect();
+    void Collect(Vector2 vector2);
 }

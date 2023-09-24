@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3725060914092617508}
   m_Layer: 0
   m_Name: Red Potion
-  m_TagString: Untagged
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ec52df5968a3746bca99c2c0d1e811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  perseguir: 0
+  rb: {fileID: 3725060914092617508}
   healthToRestore: 100
 --- !u!50 &3725060914092617508
 Rigidbody2D:
