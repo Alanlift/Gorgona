@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnifeBehaviour : ProjectedWeaponBehavior
+public class KnifeBehaviour : ProjectedWeaponBehaviour
 {
     public Sprite[] spritesRayo;
     SpriteRenderer spriteRenderer;
@@ -20,6 +20,10 @@ public class KnifeBehaviour : ProjectedWeaponBehavior
     void Update()
     {
         EncontrarEnemigoCercano();
+        if( target == null)
+        {
+            return;
+        }
         Vector2 direction = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
         transform.up = direction;
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.position - target.transform.position), 200 * Time.deltaTime);

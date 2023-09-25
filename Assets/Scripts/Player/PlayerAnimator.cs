@@ -23,6 +23,10 @@ public class PlayerAnimator : MonoBehaviour
     void Update()
     {
         //refObj = GetComponent<PlayerStats>().characterData.StartingWeapon.GetComponent<KnifeController>().estaActivoAtaque;
+        if(GetComponent<InventoryManager>().weaponSlots[0] == null)
+        {
+            return;
+        }
         refObj = GetComponent<InventoryManager>().weaponSlots[0].GetComponent<KnifeController>().estaActivoAtaque;
             //Debug.Log(refObj);
         if(!refObj) //No deberia ser así, deberia ser true move y false Attack, pero bueno así queda mientras xd

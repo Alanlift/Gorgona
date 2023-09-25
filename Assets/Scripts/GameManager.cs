@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public GameObject MainCamera;
+    public AudioClip audioBoss;
     //Los distintos estados del juego
     public enum GameState
     {
         Gameplay,
         Paused,
         GameOver,
-        LevelUp
+        Victory,
+        LevelUp,
+        BossFight
     }
 
     public GameState currentState;
@@ -21,6 +26,7 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public GameObject pauseScreen;
     public GameObject resultsScreen;
+    public GameObject victoryScreen;
     public GameObject levelUpScreen;
     public GameObject experienceBar;
 
@@ -31,6 +37,8 @@ public class GameManager : MonoBehaviour
     public Text currentMightDisplay;
     public Text currentProjectileSpeedDisplay;
     public Text currentMagnetDisplay;
+
+    public GameObject spawnBoss;
 
     [Header("Stopwatch")]
     public float timeLimit; //Tiempo limite
@@ -88,6 +96,24 @@ public class GameManager : MonoBehaviour
                     levelUpScreen.SetActive(true);
                 }
                 CheckForPauseAndResume();
+                break;
+            case GameState.BossFight:
+                AudioSource audio = MainCamera.GetComponent<AudioSource>();
+                audio.Play();
+                audio.volume = 40;
+                audio.clip = audioBoss;
+                audio.Play();
+                CheckForPauseAndResume();
+                //UpdateStopWatch();
+                break;
+            case GameState.Victory:
+                if(!isGameOver)
+                {
+                    isGameOver = true;
+                    Time.timeScale = 0f;
+                    Debug.Log("Se ganó");
+                    DisplayVictory();
+                }
                 break;
             default:
                 Debug.LogWarning("Este estado no existe");
@@ -154,9 +180,21 @@ public class GameManager : MonoBehaviour
         ChangeState(GameState.GameOver);
     }
 
+    public void GameWin()
+    {
+        ChangeState(GameState.Victory);
+    }
+
     void DisplayResults()
     {
+        experienceBar.SetActive(false);
         resultsScreen.SetActive(true);
+    }
+
+    void DisplayVictory()
+    {
+        experienceBar.SetActive(false);
+        victoryScreen.SetActive(true);
     }
 
     void UpdateStopWatch()
@@ -167,8 +205,22 @@ public class GameManager : MonoBehaviour
 
         if (stopwatchTime >= timeLimit)
         {
-            GameOver();
-            //SpawnBoss();
+            GameObject[] enemyDistances = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach(GameObject currentEnemy in enemyDistances)
+            {
+                currentEnemy.GetComponent<DropRateManager>().drops.Clear();
+                Destroy(currentEnemy);
+            }
+            if(enemyDistances.Length < 1)
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                //player.transform.position = new Vector2(12,-2.5f);
+                player.transform.position = new Vector2(-12,-2.5f);
+                Instantiate(spawnBoss, new Vector2(12,-2.5f), Quaternion.identity);
+                ChangeState(GameState.BossFight);
+            }
+            
+            //GameOver();
         }
     }
 
@@ -194,4 +246,5 @@ public class GameManager : MonoBehaviour
         levelUpScreen.SetActive(false);
         ChangeState(GameState.Gameplay);
     }
+    
 }
