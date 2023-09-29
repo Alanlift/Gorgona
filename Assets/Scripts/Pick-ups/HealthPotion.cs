@@ -6,9 +6,15 @@ public class HealthPotion : Pickup, ICollectible
 {
     public int healthToRestore;
 
-    public void Collect()
+        public void Start()
     {
+        Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+    }
+    public void Collect(Vector2 vector2)
+    {
+        Perseguida(vector2, rb);
         PlayerStats player = FindAnyObjectByType<PlayerStats>();
         player.RestoreHealth(healthToRestore);
     }
+
 }

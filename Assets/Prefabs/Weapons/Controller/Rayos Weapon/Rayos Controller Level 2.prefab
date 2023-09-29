@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 1a6760629fed98448b2815f1e1f5ab20, type: 2}
+  lowerDistance: 12
 --- !u!58 &4482714466945879609
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -53,7 +54,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4482714466945879612}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

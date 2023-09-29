@@ -7,7 +7,7 @@ public class WeaponController : MonoBehaviour //Comportamiento básico de las ar
 {
     [Header("Weapon Stats")]
     public WeaponScriptableObject weaponData;
-    float currentCooldown;
+    protected float currentCooldown;
 
     protected PlayerMovement pm;
 

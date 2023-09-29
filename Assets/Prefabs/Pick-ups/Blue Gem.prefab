@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2035986839247662265}
   m_Layer: 0
   m_Name: Blue Gem
-  m_TagString: Untagged
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 2136577087
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1041333459, guid: 06d0481b6baf9da498d29addf8363684, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd62e28bd019d224a8498d4820c21fc6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,6 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36f13e00e41cb045acc94c103f505b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  perseguir: 0
+  rb: {fileID: 2035986839247662265}
   experienceGranted: 100
 --- !u!50 &2035986839247662265
 Rigidbody2D:

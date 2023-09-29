@@ -14,7 +14,8 @@ public class PlayerCollector : MonoBehaviour
         playerCollector = GetComponent<CircleCollider2D>();
     }
 
-    void Update() {
+    void Update()
+    {
         playerCollector.radius = player.CurrentMagnet;
     }
 
@@ -24,12 +25,13 @@ public class PlayerCollector : MonoBehaviour
         if(col.gameObject.TryGetComponent(out ICollectible collectible))
         {
             //Obtenemos el componente rigidbody2d
-            Rigidbody2D rb = col.gameObject.GetComponent<Rigidbody2D>();
+            //Rigidbody2D rb = col.gameObject.GetComponent<Rigidbody2D>();
             //Un vector que apunta desde el item al jugador
             Vector2 forceDirection = (transform.position - col.transform.position).normalized;
-            rb.AddForce(forceDirection * pullSpeed); //Nos traemos el objeto por el poder de la fuerza del Jedi
             //Y se llama a la función para que lo agarre
-            collectible.Collect();
+                //rb.AddForce(forceDirection * pullSpeed); //Nos traemos el objeto por el poder de la fuerza del Jedi
+            collectible.Collect(forceDirection);
         }
     }
+
 }

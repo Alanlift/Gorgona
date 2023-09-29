@@ -53,15 +53,25 @@ public class EnemyStats : MonoBehaviour
         es.OnEnemyKilled();
         Destroy(gameObject);
     }
-    private void OnCollisionStay2D(Collision2D col) {
-         if(col.gameObject.CompareTag("Player"))
+    private void OnCollisionStay2D(Collision2D col)
+    {
+        if(col.gameObject.CompareTag("Player"))
         {
             PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
             player.TakeDamage(currentDamage);
+            currentMoveSpeed = 0;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        if(col.gameObject.CompareTag("Player"))
+        {
+            currentMoveSpeed = enemyData.MoveSpeed;
         }
     }
 
-    private void OnDestroy() {
+    private void OnDestroy()
+    {
     }
 
     void ReturnEnemy()
