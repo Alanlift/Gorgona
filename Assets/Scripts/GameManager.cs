@@ -98,11 +98,7 @@ public class GameManager : MonoBehaviour
                 CheckForPauseAndResume();
                 break;
             case GameState.BossFight:
-                AudioSource audio = MainCamera.GetComponent<AudioSource>();
-                audio.Play();
-                audio.volume = 40;
-                audio.clip = audioBoss;
-                audio.Play();
+                
                 CheckForPauseAndResume();
                 //UpdateStopWatch();
                 break;
@@ -218,6 +214,11 @@ public class GameManager : MonoBehaviour
                 player.transform.position = new Vector2(-12,-2.5f);
                 Instantiate(spawnBoss, new Vector2(12,-2.5f), Quaternion.identity);
                 ChangeState(GameState.BossFight);
+                //Pasamos el audio acá si pq si no en el update no paraba de actualizarse y por eso no se reproducia
+                AudioSource audio = MainCamera.GetComponent<AudioSource>();
+                audio.volume = 40;
+                audio.clip = audioBoss;
+                audio.Play();
             }
             
             //GameOver();
