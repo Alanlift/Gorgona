@@ -24,11 +24,16 @@ public class KnifeBehaviour : ProjectedWeaponBehaviour
         {
             return;
         }
-        Vector2 direction = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
-        transform.up = direction;
+            //Vector2 direction = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
+            //transform.up = direction;
+        //Analizar luego su función
+        Vector2 direction = target.transform.position - transform.position;
+        direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.position - target.transform.position), 200 * Time.deltaTime);
         //DirectionChecker(target);
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, currentSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Euler(Vector3.forward * (angle));
         
         //transform.position += direction * currentSpeed * Time.deltaTime; //Movimiento del cuchillo
     }

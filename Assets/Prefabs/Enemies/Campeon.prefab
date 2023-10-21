@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3855592135270341576}
   - component: {fileID: 1141356075}
   - component: {fileID: 5388724176088536339}
+  - component: {fileID: 6572449721445731048}
   m_Layer: 0
   m_Name: Campeon
   m_TagString: Enemy
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3855592135270341579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5132, y: -5.6306, z: 0}
+  m_LocalPosition: {x: -0.5132, y: -5.6306, z: 1}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -147,6 +148,18 @@ MonoBehaviour:
   - name: Blue Gem
     itemPrefab: {fileID: 3306515006210968128, guid: 63122193491588c449f76de85eb9e519, type: 3}
     dropRate: 50
+--- !u!114 &6572449721445731048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855592135270341579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331f5e9c27c587e43aa9e312972d731e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6717013249714216288
 GameObject:
   m_ObjectHideFlags: 0

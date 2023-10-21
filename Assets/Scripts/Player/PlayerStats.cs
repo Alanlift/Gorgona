@@ -151,7 +151,11 @@ public class PlayerStats : MonoBehaviour
         CurrentMagnet = characterData.Magnet;
 
         //Spawneamos el arma o item pasivo
-        SpawnWeapon(characterData.StartingWeapon);
+        if(characterData.StartingWeapon != null)
+        {
+            SpawnWeapon(characterData.StartingWeapon);
+        }
+        
         //SpawnWeapon(secondWeaponTest);
         //SpawnPassiveItem(firstPassiveItemTest);
         //SpawnPassiveItem(secondPassiveItemTest);
@@ -165,6 +169,7 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentMightDisplay.text = "Poder: " + currentMight;
         GameManager.instance.currentProjectileSpeedDisplay.text = "Velocidad Proyectil: " + currentProjectileSpeed;
         GameManager.instance.currentMagnetDisplay.text = "Imán: " + currentMagnet;
+        
 
         UpdateHealthBar();
         UpdateExpBar();

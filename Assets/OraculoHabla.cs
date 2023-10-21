@@ -39,17 +39,20 @@ public class OraculoHabla : MonoBehaviour
             textoOraculo.text = "Bueno, no tan vida aún; este es un sueño lúcido";
             yield return new WaitForSeconds(4f);
             if(!tieneArma && !ahoraAtaca)
-        {
+            {
             textoOraculo.text = "Sé que aún no me conoces, pero ahora mismo soy tu mejor opción";
             yield return new WaitForSeconds(5f);
-        }
+            }
             if(!tieneArma && !ahoraAtaca)
-        {
+            {
             textoOraculo.text = "Recuerdas como moverte, verdad? (Utiliza W,A,S,D)";
             yield return new WaitForSeconds(6f);
-        }
+            }
+            if(!tieneArma && !ahoraAtaca)
+            {
             textoOraculo.text = "Muy bien, ahora, ¿Recuerdas tu arco?";
             yield return new WaitForSeconds(4f);
+            }
             if(!tieneArma && !ahoraAtaca)
         {
             textoOraculo.text = "Ya no lo necesitarás, Los rayos que te ha otorgado Zeus lo reemplazarán (Recoge el item)";
@@ -75,7 +78,7 @@ public class OraculoHabla : MonoBehaviour
             yield return new WaitForSeconds(3f);
             textoOraculo.text = "Creo que eso es todo lo que necesitas por ahora. Ya nos encontraremos, recuerda que eres parte de algo mucho más grande";
             yield return new WaitForSeconds(4f);
-            textoOraculo.text = "Ahora, despierta, Gorgona";
+            textoOraculo.text = "Ahora... ¡Despierta Gorgona!";
             yield return new WaitForSeconds(3f);
             SceneManager.LoadScene("Partida");
         }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 342590331377079919}
   - component: {fileID: 342590331377079917}
   - component: {fileID: 342590331377079916}
+  - component: {fileID: -7411710533410538447}
   m_Layer: 0
   m_Name: Minotauro
   m_TagString: Enemy
@@ -149,6 +150,18 @@ MonoBehaviour:
   - name: Blue Gem
     itemPrefab: {fileID: 3306515006210968128, guid: 63122193491588c449f76de85eb9e519, type: 3}
     dropRate: 50
+--- !u!114 &-7411710533410538447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342590331377079913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331f5e9c27c587e43aa9e312972d731e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1340797738765452947
 GameObject:
   m_ObjectHideFlags: 0

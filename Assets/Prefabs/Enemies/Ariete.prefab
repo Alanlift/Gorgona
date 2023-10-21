@@ -76,6 +76,8 @@ GameObject:
   - component: {fileID: 3658314553977935400}
   - component: {fileID: 3658314553977935414}
   - component: {fileID: 3658314553977935413}
+  - component: {fileID: -6410269920621953135}
+  - component: {fileID: 6767795272063965019}
   m_Layer: 0
   m_Name: Ariete
   m_TagString: Enemy
@@ -210,3 +212,36 @@ MonoBehaviour:
   - name: Blue Gem
     itemPrefab: {fileID: 3306515006210968128, guid: 63122193491588c449f76de85eb9e519, type: 3}
     dropRate: 50
+--- !u!95 &-6410269920621953135
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3658314553977935410}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a3fba4f43491e664593d7322b779037b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6767795272063965019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3658314553977935410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331f5e9c27c587e43aa9e312972d731e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

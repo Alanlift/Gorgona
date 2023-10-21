@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     public GameState currentState;
     public GameState previousState;
+    public GameState bossState;
 
     [Header("UI")]
     public GameObject pauseScreen;
@@ -98,7 +99,6 @@ public class GameManager : MonoBehaviour
                 CheckForPauseAndResume();
                 break;
             case GameState.BossFight:
-                
                 CheckForPauseAndResume();
                 //UpdateStopWatch();
                 break;
@@ -137,10 +137,17 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        if(currentState == GameState.Paused)
+        if(currentState == GameState.Paused && previousState != GameState.LevelUp)
         {
             ChangeState(previousState);
             Time.timeScale = 1f;
+            experienceBar.SetActive(true);
+            pauseScreen.SetActive(false);
+        }
+        else
+        {
+            ChangeState(previousState);
+            Time.timeScale = 0f;
             experienceBar.SetActive(true);
             pauseScreen.SetActive(false);
         }
@@ -214,6 +221,7 @@ public class GameManager : MonoBehaviour
                 player.transform.position = new Vector2(-12,-2.5f);
                 Instantiate(spawnBoss, new Vector2(12,-2.5f), Quaternion.identity);
                 ChangeState(GameState.BossFight);
+                bossState = GameState.BossFight;
                 //Pasamos el audio acá si pq si no en el update no paraba de actualizarse y por eso no se reproducia
                 AudioSource audio = MainCamera.GetComponent<AudioSource>();
                 audio.volume = 40;
@@ -245,7 +253,15 @@ public class GameManager : MonoBehaviour
         choosingUpgrade = false;
         Time.timeScale = 1;//Resumimos la partida
         levelUpScreen.SetActive(false);
-        ChangeState(GameState.Gameplay);
+        if(bossState == GameState.BossFight)
+        {
+            ChangeState(GameState.BossFight);
+        }
+        else
+        {
+            ChangeState(GameState.Gameplay);
+        }
+        //ChangeState(GameState.Gameplay);
     }
     
 }
