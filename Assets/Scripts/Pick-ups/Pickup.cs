@@ -26,7 +26,7 @@ public class Pickup : MonoBehaviour
     {
         if (perseguir)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player, .1f);
+            transform.position = Vector2.MoveTowards(transform.position, player, 80f * Time.deltaTime);
             //rb.AddForce(forceDirection * 10f);
         }
     }

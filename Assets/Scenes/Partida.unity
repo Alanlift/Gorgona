@@ -6602,7 +6602,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 623523008597531597, guid: ee85d4914b0938a4f9e99a10db601e4e, type: 3}
     waveQuota: 0
-    spawnInterval: 2
+    spawnInterval: 1
     spawnCount: 0
   - waveName: Wave 2
     enemyGroups:
@@ -6615,7 +6615,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 623523008597531597, guid: ee85d4914b0938a4f9e99a10db601e4e, type: 3}
     waveQuota: 0
-    spawnInterval: 2
+    spawnInterval: 1
     spawnCount: 0
   - waveName: Wave 3
     enemyGroups:
@@ -6641,11 +6641,11 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 2432275038057915092, guid: 9bf7c0ca92a91a041ac29ae55bbe0aa7, type: 3}
     waveQuota: 0
-    spawnInterval: 2
+    spawnInterval: 1
     spawnCount: 0
   currentWaveCount: 0
   enemiesAlive: 0
-  maxEnemiesAllowed: 4
+  maxEnemiesAllowed: 5
   maxEnemiesReached: 0
   waveInterval: 60
   relativeSpawnPoints:
