@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Aldeano
   m_EditorClassIdentifier: 
   health: 5
-  moveSpeed: 1
+  moveSpeed: 2
   damage: 10

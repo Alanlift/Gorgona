@@ -23,7 +23,7 @@ public class KnifeController : WeaponController
         base.Attack();
         GameObject spawnedKnife = Instantiate(weaponData.Prefab);
         spawnedKnife.transform.position = transform.position; //Le asigno su posición a la del jugador
-        //spawnedKnife.GetComponent<KnifeBehaviour>().changeTarget(passTarget); //Referenciar y establecer la dirección
+        //spawnedKnife.GetComponent<KnifeBehaviour>().ChangeTarget(passTarget); //Referenciar y establecer la dirección
         spawnedKnife.GetComponent<KnifeBehaviour>();
     }
     //Intento de ataque al objetivo

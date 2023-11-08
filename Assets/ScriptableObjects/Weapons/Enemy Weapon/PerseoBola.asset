@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb104e841f8b64641afdfd8d553ff5f9, type: 3}
+  m_Name: PerseoBola
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3488164880672418846, guid: cf36772cabf20794483d32f16e460876, type: 3}
+  damage: 50
+  speed: 13.5
+  cooldownDuration: 2.5
+  pierce: 1
+  level: 1
+  nextLevelPrefab: {fileID: 0}
+  name: BolaPerseo
+  description: 
+  icon: {fileID: -80789555, guid: 3c2141721d5807a419eaf4eddaecb5d0, type: 3}

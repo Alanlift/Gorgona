@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ArieteBehaviour : MonoBehaviour
 {
+    public AudioSource soundEffect;
     Transform player;
     EnemyStats enemy;
     Transform target = null;
@@ -63,6 +64,7 @@ public class ArieteBehaviour : MonoBehaviour
     {
         if(col.CompareTag("Player") && col.gameObject != null && !estaActivoAtaqueFase1)
         {
+            soundEffect.Play();
             estaActivoAtaqueFase1 = true;
             changeTarget(col.gameObject.transform);
         }

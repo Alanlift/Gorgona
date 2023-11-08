@@ -8,8 +8,8 @@ public class CampeonBehaviour : MonoBehaviour
     EnemyStats enemy;
     Transform target = null;
     float gradoRotacion;
-    bool estaActivoAtaqueFase1;
-    bool estaActivoAtaqueFase2;
+    public bool estaActivoAtaqueFase1;
+    public bool estaActivoAtaqueFase2;
     public float tiempoDeAtaque;
     GameObject parentRef;
     public Vector2 direction;
@@ -25,7 +25,7 @@ public class CampeonBehaviour : MonoBehaviour
         player = FindObjectOfType<PlayerMovement>().transform;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if(!estaActivoAtaqueFase1 & !estaActivoAtaqueFase2)
@@ -42,7 +42,7 @@ public class CampeonBehaviour : MonoBehaviour
     {
         target = newTarget;
     }
-
+    /*
     void EncontrarJugadorCercano()
     {
         float lowerEnemyDistance = Mathf.Infinity;
@@ -60,6 +60,7 @@ public class CampeonBehaviour : MonoBehaviour
             //Debug.DrawLine(transform.position, closestEnemy.transform.position); (Ver recorrido)
         //changeTarget(closestEnemy);      
     }
+    */
 
     void OnTriggerStay2D(Collider2D col)
     {
@@ -76,9 +77,8 @@ public class CampeonBehaviour : MonoBehaviour
     {
             if(estaActivoAtaqueFase1 && !estaActivoAtaqueFase2)
             {
-                Debug.Log("LO ATACA :V");
-                gradoRotacion++;
-                parentRef.transform.rotation = Quaternion.Euler(Vector3.forward * gradoRotacion);
+                    //gradoRotacion++; NO MAS ROTAZAO
+                    //parentRef.transform.rotation = Quaternion.Euler(Vector3.forward * gradoRotacion);
                 parentRef.transform.position = Vector2.MoveTowards(parentRef.transform.position, player.transform.position, enemy.currentMoveSpeed * 2 * Time.deltaTime);
                 //Vector2 direction = new Vector2(target.transform.position.x - parentRef.transform.position.x, target.transform.position.y - parentRef.transform.position.y); //Es para dirección
                 //parentRef.transform.up = direction;
@@ -88,9 +88,8 @@ public class CampeonBehaviour : MonoBehaviour
             }
             if(estaActivoAtaqueFase2)
             {
-                Debug.Log("ESTOY JADEADO AHNYAAA");
-                gradoRotacion = 1;
-                parentRef.transform.rotation = Quaternion.Euler(Vector3.forward * gradoRotacion);
+                //gradoRotacion = 1;
+                //parentRef.transform.rotation = Quaternion.Euler(Vector3.forward * gradoRotacion);
                 yield return new WaitForSeconds(tiempoDeAtaque + 1f);
                 estaActivoAtaqueFase1 = false;
                 estaActivoAtaqueFase2 = false;

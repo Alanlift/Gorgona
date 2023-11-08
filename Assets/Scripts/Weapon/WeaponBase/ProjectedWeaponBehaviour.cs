@@ -7,7 +7,7 @@ public class ProjectedWeaponBehaviour : MonoBehaviour //Comportamiento de todas 
 {
     public WeaponScriptableObject weaponData;
 
-    protected GameObject direction;
+    //protected GameObject direction;
     public float destroyAfterSeconds;
     public bool isDestroyed;
 
@@ -38,8 +38,7 @@ public class ProjectedWeaponBehaviour : MonoBehaviour //Comportamiento de todas 
 
     public void DirectionChecker(GameObject dir) //Para cambiar las rotaciones y las escalas(que se flipee)
     {
-        direction = dir;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.position - direction.transform.position), 200 * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.position - dir.transform.position), 200 * Time.deltaTime);
 
         /*float dirx = direction.x;
         float diry = direction.y;

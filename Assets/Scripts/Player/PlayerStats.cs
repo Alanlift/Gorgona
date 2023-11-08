@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
+    public AudioSource healthSoundEffect;
+    public AudioSource experienceSoundEffect;
 
     //Current stats
     float currentHealth;
@@ -135,13 +137,16 @@ public class PlayerStats : MonoBehaviour
     public Image expBar;
     public Text levelText;
 
-    public GameObject firstPassiveItemTest, secondPassiveItemTest;
 
-    public GameObject secondWeaponTest;
+    SpriteRenderer spriteRenderer;
+    Color originalColor;
 
     void Awake()
     {
         inventory = GetComponent<InventoryManager>();
+        //Sprite y Color
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
         //Asignamos las variables
         CurrentHealth = characterData.Health;
         CurrentMoveSpeed = characterData.MoveSpeed;
@@ -191,6 +196,7 @@ public class PlayerStats : MonoBehaviour
 
     public void IncreaseExperience(int amount)
     {
+        experienceSoundEffect.Play();
         experience += amount;
         LevelUpChecker();
         UpdateExpBar();
@@ -224,6 +230,7 @@ public class PlayerStats : MonoBehaviour
     {
         //Si el jugador no es invencible pasa el daño
         if(!isInvincible){
+            StartCoroutine(DamageFlash());
             CurrentHealth -= damage;
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
@@ -235,6 +242,20 @@ public class PlayerStats : MonoBehaviour
 
             UpdateHealthBar();
         }     
+    }
+
+    IEnumerator DamageFlash()
+    {
+        spriteRenderer.color = new Color(1, 0, 0, 1);
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.color = originalColor;
+    }
+
+    IEnumerator HealFlash()
+    {
+        spriteRenderer.color = new Color(0, 1, 0, 1);
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.color = originalColor;
     }
 
     void UpdateHealthBar()
@@ -254,6 +275,8 @@ public class PlayerStats : MonoBehaviour
 
     public void RestoreHealth(float amount)
     {
+        healthSoundEffect.Play();
+        StartCoroutine(HealFlash());
         //Cura si tiene menos vida
         if(CurrentHealth < characterData.Health)
         {
