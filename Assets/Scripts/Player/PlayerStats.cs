@@ -28,7 +28,7 @@ public class PlayerStats : MonoBehaviour
                 currentHealth = value;
                 if(GameManager.instance != null)
                 {
-                    GameManager.instance.currentHealthDisplay.text = "Vida: " + currentHealth;
+                    GameManager.instance.currentHealthDisplay.text = "Vida: " + Mathf.Round(currentHealth);
                 }
                 //Actualizamos a tiempo real el valor de la estadistica
             }
@@ -192,6 +192,7 @@ public class PlayerStats : MonoBehaviour
             isInvincible = false;
         }
         Recover();
+        UpdateHealthBar();
     }
 
     public void IncreaseExperience(int amount)

@@ -77,7 +77,6 @@ public class MinotauroBehaviour : MonoBehaviour
         Ataque3.SetActive(false);
         bossAM.SetBool("Round", false);
         bossAM.SetBool("Death", true);
-        Debug.Log("Muertito");
         GameManager.instance.GameWin();
     }
 

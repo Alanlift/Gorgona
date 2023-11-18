@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 08b858815528ae340bc31eacb476b80f, type: 2}
-  destroyAfterSeconds: 2.5
+  destroyAfterSeconds: 2.1
   isDestroyed: 0
   spritesRayo:
   - {fileID: -1671007575, guid: e7465b66a526a9245b4afbfeb891f363, type: 3}

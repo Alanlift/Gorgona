@@ -74,7 +74,6 @@ public class PerseoBehaviour : MonoBehaviour
         Ataque3.SetActive(false);
         bossAM.SetBool("Escudo", false);
         bossAM.SetBool("Death", true);
-        Debug.Log("Muertito");
         GameManager.instance.GameWin();
     }
 }

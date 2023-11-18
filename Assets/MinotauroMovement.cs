@@ -13,7 +13,7 @@ public class MinotauroMovement : MonoBehaviour
     {
         parentRef =  transform.parent.gameObject;
         enemy = parentRef.GetComponent<EnemyStats>();
-        enemy.BuffDamage(1.5f);
+        enemy.BuffDamage(1.20f);
         enemy.BuffMoveSpeed(1.1f);
         player = FindObjectOfType<PlayerMovement>().transform;
         soundEffect.Play();

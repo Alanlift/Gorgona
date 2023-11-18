@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("EXTRA"+ this +" DELETED");
+            //Debug.LogWarning("EXTRA"+ this +" DELETED");
             Destroy(gameObject);
         }
         DisableScreens();
@@ -89,7 +89,6 @@ public class GameManager : MonoBehaviour
                 {
                     isGameOver = true;
                     Time.timeScale = 0f;
-                    Debug.Log("Se perdió");
                     DisplayResults();
                 }
                 break;
@@ -98,7 +97,6 @@ public class GameManager : MonoBehaviour
                 {
                     choosingUpgrade = true;
                     Time.timeScale = 0f;
-                    Debug.Log("Mejoras");
                     levelUpScreen.SetActive(true);
                 }
                 CheckForPauseAndResume();
@@ -113,7 +111,6 @@ public class GameManager : MonoBehaviour
                 {
                     isGameOver = true;
                     Time.timeScale = 0f;
-                    Debug.Log("Se ganó");
                     DisplayVictory();
                 }
                 break;
@@ -163,7 +160,7 @@ public class GameManager : MonoBehaviour
 
     void CheckForPauseAndResume()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             if(currentState == GameState.Paused)
             {

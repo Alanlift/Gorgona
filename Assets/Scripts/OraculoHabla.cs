@@ -71,13 +71,17 @@ public class OraculoHabla : MonoBehaviour
         if(ahoraAtaca && !tieneArma)
         {
             textoOraculo.text = "Algunas veces, tus viejos poderes de Medusa vuelven a ti; cuando derrotes rivales, dejarán piedras.";
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(6f);
             textoOraculo.text = "Cuando tengas suficiente poder, podrás mejorarte de alguna manera";
             //OraculoAdios.SetActive(false);
             //TutorialManager.instance.StartLevelUp();
-            yield return new WaitForSeconds(3f);
-            textoOraculo.text = "Creo que eso es todo lo que necesitas por ahora. Ya nos encontraremos, recuerda que eres parte de algo mucho más grande";
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(5f);
+            textoOraculo.text = "Creo que eso es todo lo que necesitas por ahora.";
+            yield return new WaitForSeconds(3.5f);
+            textoOraculo.text = "Ya nos encontraremos, recuerda que eres parte de algo mucho más grande";
+            yield return new WaitForSeconds(5f);
+            textoOraculo.text = "Una cosa más, si en algún momento necesitas descansar, llamame (Aprieta el Espacio/Barra Espaciadora)";
+            yield return new WaitForSeconds(6f);
             textoOraculo.text = "Ahora... ¡Despierta Gorgona!";
             yield return new WaitForSeconds(3f);
             SceneManager.LoadScene("Partida");
