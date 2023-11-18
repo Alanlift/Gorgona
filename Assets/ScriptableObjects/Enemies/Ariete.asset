@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ariete
   m_EditorClassIdentifier: 
   health: 25
-  moveSpeed: 2
+  moveSpeed: 3
   damage: 30

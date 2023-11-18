@@ -20,5 +20,5 @@ MonoBehaviour:
   level: 2
   nextLevelPrefab: {fileID: 0}
   name: Rayos Nivel 2
-  description: "Le aumenta el da\xF1o a los rayos"
+  description: Le aumenta la velocidad a los rayos
   icon: {fileID: 21300000, guid: 388ca37f3f4816942982babe3189b671, type: 3}

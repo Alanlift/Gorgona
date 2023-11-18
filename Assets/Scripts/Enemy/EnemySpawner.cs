@@ -38,11 +38,14 @@ public class EnemySpawner : MonoBehaviour
     public List<Transform> relativeSpawnPoints; //Lista de puntos de spawns de los enemigos
     Transform player;
     private bool isWaveActive = false;
+    [HideInInspector]
+    public List<GameObject> buffedLobos;
 
     void Start()
     {
         player = FindObjectOfType<PlayerStats>().transform;
         CalculateWaveQuota();
+        buffedLobos = new List<GameObject>();
     }
 
 
@@ -70,7 +73,7 @@ public class EnemySpawner : MonoBehaviour
             currentWaveQuota += enemyGroup.enemyCount;
         }
         waves[currentWaveCount].waveQuota = currentWaveQuota;
-        Debug.LogWarning("Cantidad de enemigos " + currentWaveQuota);
+        //Debug.LogWarning("Cantidad de enemigos " + currentWaveQuota);
     }
 
     IEnumerator BeginNextWave()
@@ -113,6 +116,11 @@ public class EnemySpawner : MonoBehaviour
                     enemyGroup.spawnCount++;
                     waves[currentWaveCount].spawnCount++;
                     enemiesAlive++;
+                    if(enemyGroup.enemyPrefab.name == "ManadaLobo" || enemyGroup.enemyPrefab.name == "ManadaPerro")
+                    {
+                        buffedLobos.Add(enemyGroup.enemyPrefab.gameObject.transform.GetChild(0).gameObject);
+                        buffedLobos.Add(enemyGroup.enemyPrefab.gameObject.transform.GetChild(1).gameObject);
+                    }
                 }
             }
         }

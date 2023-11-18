@@ -27,10 +27,11 @@ public class PlayerCollector : MonoBehaviour
             //Obtenemos el componente rigidbody2d
             //Rigidbody2D rb = col.gameObject.GetComponent<Rigidbody2D>();
             //Un vector que apunta desde el item al jugador
-            Vector2 forceDirection = (transform.position - col.transform.position).normalized;
+                //Vector2 forceDirection = (transform.position - col.transform.position).normalized;
             //Y se llama a la función para que lo agarre
                 //rb.AddForce(forceDirection * pullSpeed); //Nos traemos el objeto por el poder de la fuerza del Jedi
-            collectible.Collect(forceDirection);
+                //collectible.Collect(forceDirection);
+                collectible.Collect(transform.position);
         }
     }
 

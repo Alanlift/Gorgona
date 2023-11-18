@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 3c2141721d5807a419eaf4eddaecb5d0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 4
+        width: 508
+        height: 692
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb5f2ebdddc43543b0af325cada6c7a
+      internalID: -932246161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 2
+        width: 518
+        height: 684
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd16684975b0d9c45997232e9534dacd
+      internalID: -1591443333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 0
+        width: 551
+        height: 703
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012d301aa31b8ad448533dcff68e9d70
+      internalID: -1358501311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 0
+        width: 476
+        height: 696
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a716da9e31eba429a580fafdfbcff9
+      internalID: 319450374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2418
+        y: 0
+        width: 464
+        height: 686
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67fe1ee270000494f91a53660b9cd1fd
+      internalID: 1759496130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2959
+        y: 0
+        width: 530
+        height: 697
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a5eba30ca1f1140a0ddceba951e0de
+      internalID: -771251290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3716
+        y: 0
+        width: 541
+        height: 697
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb17c335d0c70084692f57c718b80aa4
+      internalID: -2114129807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 4660
+        y: 0
+        width: 505
+        height: 703
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6120794d1878a3041ae2ae77d95ac8a7
+      internalID: 1881360663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 5167
+        y: 474
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39df2ba5fec3d6841a1361e488ec0659
+      internalID: -80789555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 5348
+        y: 0
+        width: 620
+        height: 703
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bccfb8503e72bb240a2b3a3d6ab2d539
+      internalID: 123106122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 5992
+        y: 2
+        width: 570
+        height: 697
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c76f321096196fe4fa4642b35b163c1d
+      internalID: 140031683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 6993
+        y: 0
+        width: 482
+        height: 703
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e04294e195ddb24f9ce31fa71c93bb8
+      internalID: -210464736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 8155
+        y: 0
+        width: 528
+        height: 703
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc2e4b9fba77dd4fbf32edd23c27496
+      internalID: -211615777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 8684
+        y: 0
+        width: 611
+        height: 703
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce35b5e67e97f041aba092328479d00
+      internalID: -2009042841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 9985
+        y: 5
+        width: 489
+        height: 698
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61acd4d59fa0afa429047969332e1a6c
+      internalID: 417951782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 10622
+        y: 2
+        width: 490
+        height: 701
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34fb3017682375e4c9a87cdd7a7f7d93
+      internalID: -1227944422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 11284
+        y: 0
+        width: 507
+        height: 703
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5334d1cc92efe44950622945b56c66
+      internalID: 1163284716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 4403
+        y: 23
+        width: 129
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f734744335f557d42b8267e058086fe1
+      internalID: -1350482193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 11937
+        y: 13
+        width: 432
+        height: 690
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd694458d5e9bc49951173b9580923f
+      internalID: 2121568638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 6663
+        y: 36
+        width: 246
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40466002fe597f4eb3973284a2c34cb
+      internalID: -2069755284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 7495
+        y: 0
+        width: 581
+        height: 703
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1094d7ca8c2b3ce46a4eae5f0ec5fce6
+      internalID: -1732174565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perseo Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 9481
+        y: 3
+        width: 342
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72644c5db712b4f44850fecb375d06bb
+      internalID: 1919548359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Perseo Sprite Sheet_0: -932246161
+      Perseo Sprite Sheet_1: -1591443333
+      Perseo Sprite Sheet_10: -210464736
+      Perseo Sprite Sheet_11: -1732174565
+      Perseo Sprite Sheet_12: -211615777
+      Perseo Sprite Sheet_13: -2009042841
+      Perseo Sprite Sheet_14: 417951782
+      Perseo Sprite Sheet_15: -1227944422
+      Perseo Sprite Sheet_16: 1163284716
+      Perseo Sprite Sheet_17: 2121568638
+      Perseo Sprite Sheet_18: -1350482193
+      Perseo Sprite Sheet_2: -1358501311
+      Perseo Sprite Sheet_20: -2069755284
+      Perseo Sprite Sheet_21: 1919548359
+      Perseo Sprite Sheet_22: -80789555
+      Perseo Sprite Sheet_23: 1884225980
+      Perseo Sprite Sheet_24: -553695987
+      Perseo Sprite Sheet_25: 2134548259
+      Perseo Sprite Sheet_26: -1449515872
+      Perseo Sprite Sheet_27: -189516830
+      Perseo Sprite Sheet_29: 119518782
+      Perseo Sprite Sheet_3: 319450374
+      Perseo Sprite Sheet_30: 411483554
+      Perseo Sprite Sheet_31: 1226591194
+      Perseo Sprite Sheet_32: -150913585
+      Perseo Sprite Sheet_33: 927574514
+      Perseo Sprite Sheet_34: 618444195
+      Perseo Sprite Sheet_35: 1593994669
+      Perseo Sprite Sheet_37: 459918562
+      Perseo Sprite Sheet_38: 934344224
+      Perseo Sprite Sheet_39: 321689819
+      Perseo Sprite Sheet_4: 1759496130
+      Perseo Sprite Sheet_40: -369195941
+      Perseo Sprite Sheet_41: -497834242
+      Perseo Sprite Sheet_42: 1581235813
+      Perseo Sprite Sheet_43: 719895451
+      Perseo Sprite Sheet_5: -771251290
+      Perseo Sprite Sheet_6: -2114129807
+      Perseo Sprite Sheet_7: 1881360663
+      Perseo Sprite Sheet_8: 123106122
+      Perseo Sprite Sheet_9: 140031683
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

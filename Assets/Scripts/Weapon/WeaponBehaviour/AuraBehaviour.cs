@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class AuraBehaviour : MeleeWeaponBehaviour
 {
+    public AudioSource soundEffect;
     List<GameObject> markedEnemies;
     protected override void Start()
     {
+        
         base.Start();
+        soundEffect.Play();
         markedEnemies = new List<GameObject>();
     }
 

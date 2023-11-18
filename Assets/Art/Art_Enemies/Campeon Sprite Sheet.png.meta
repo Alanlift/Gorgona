@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Campeon Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 358
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e955dd20da5d4347a939749495eef42
+      internalID: 94622662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campeon Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 0
+        width: 343
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f202f58b3e3a994eac5f0936387d7c7
+      internalID: 1911916572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campeon Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 0
+        width: 386
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b165a4a1a0656247948371ea0aa6fb8
+      internalID: 149179730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campeon Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 3
+        width: 325
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8735c11e98e650c43ba962e6ef30533c
+      internalID: 450657384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campeon Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 4
+        width: 328
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a3cca011865844f87e84b11ef99fe8
+      internalID: -1362451365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campeon Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 0
+        width: 361
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 41, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e8b1f28a1aec9489e9128aacad40ca
+      internalID: 1685994856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +264,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Campeon Sprite Sheet_0: 94622662
+      Campeon Sprite Sheet_1: -279997973
+      Campeon Sprite Sheet_2: 1911916572
+      Campeon Sprite Sheet_3: 149179730
+      Campeon Sprite Sheet_4: 450657384
+      Campeon Sprite Sheet_5: -1362451365
+      Campeon Sprite Sheet_6: 1149964693
+      Campeon Sprite Sheet_8: -926859452
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

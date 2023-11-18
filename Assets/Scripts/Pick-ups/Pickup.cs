@@ -6,7 +6,8 @@ public class Pickup : MonoBehaviour
 {
     public bool perseguir = false;
     public Rigidbody2D rb;
-    Vector2 forceDirection;
+    //Vector2 forceDirection;
+    Vector2 player;
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.CompareTag("Player"))
@@ -15,16 +16,18 @@ public class Pickup : MonoBehaviour
             Destroy(gameObject); 
         }
     }
-    public void Perseguida(Vector2 vector2, Rigidbody2D AYUDA)
+    public void Perseguida(Vector2 vector2)
     {
-        forceDirection = vector2;
+        //forceDirection = vector2;
+        player = vector2;
         perseguir = true;
     }
         private void Update()
     {
         if (perseguir)
         {
-            rb.AddForce(forceDirection * 10f);
+            transform.position = Vector2.MoveTowards(transform.position, player, 80f * Time.deltaTime);
+            //rb.AddForce(forceDirection * 10f);
         }
     }
 }

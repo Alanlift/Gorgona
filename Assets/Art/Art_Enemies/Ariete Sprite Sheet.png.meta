@@ -132,8 +132,8 @@ TextureImporter:
       name: Ariete Sprite Sheet_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 34
+        x: 24
+        y: 39
         width: 329
         height: 283
       alignment: 0

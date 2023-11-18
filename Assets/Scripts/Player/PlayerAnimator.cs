@@ -7,8 +7,8 @@ public class PlayerAnimator : MonoBehaviour
     Animator am;
     PlayerMovement pm;
     SpriteRenderer sr;
-    InventoryManager invman;
-    bool refObj;
+    WeaponController invman;
+    bool refObj = true;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +23,11 @@ public class PlayerAnimator : MonoBehaviour
     void Update()
     {
         //refObj = GetComponent<PlayerStats>().characterData.StartingWeapon.GetComponent<KnifeController>().estaActivoAtaque;
-        if(GetComponent<InventoryManager>().weaponSlots[0] == null)
+        if(GetComponent<InventoryManager>().weaponSlots[0] != null)
         {
-            return;
+            refObj = GetComponent<InventoryManager>().weaponSlots[0].GetComponent<KnifeController>().estaActivoAtaque;
         }
-        refObj = GetComponent<InventoryManager>().weaponSlots[0].GetComponent<KnifeController>().estaActivoAtaque;
+        //refObj = GetComponent<InventoryManager>().weaponSlots[0].GetComponent<KnifeController>().estaActivoAtaque;
             //Debug.Log(refObj);
         if(!refObj) //No deberia ser así, deberia ser true move y false Attack, pero bueno así queda mientras xd
         {
@@ -58,7 +58,7 @@ public class PlayerAnimator : MonoBehaviour
 
     void SpriteDirectionChecker()
     {
-        if (pm.lastHorizontalVector < 0)
+        if (pm.lastHorizontalVector < 0) 
         {
             sr.flipX = true;
         } else

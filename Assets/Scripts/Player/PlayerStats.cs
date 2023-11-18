@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
+    public AudioSource healthSoundEffect;
+    public AudioSource experienceSoundEffect;
 
     //Current stats
     float currentHealth;
@@ -26,7 +28,7 @@ public class PlayerStats : MonoBehaviour
                 currentHealth = value;
                 if(GameManager.instance != null)
                 {
-                    GameManager.instance.currentHealthDisplay.text = "Vida: " + currentHealth;
+                    GameManager.instance.currentHealthDisplay.text = "Vida: " + Mathf.Round(currentHealth);
                 }
                 //Actualizamos a tiempo real el valor de la estadistica
             }
@@ -135,13 +137,16 @@ public class PlayerStats : MonoBehaviour
     public Image expBar;
     public Text levelText;
 
-    public GameObject firstPassiveItemTest, secondPassiveItemTest;
 
-    public GameObject secondWeaponTest;
+    SpriteRenderer spriteRenderer;
+    Color originalColor;
 
     void Awake()
     {
         inventory = GetComponent<InventoryManager>();
+        //Sprite y Color
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
         //Asignamos las variables
         CurrentHealth = characterData.Health;
         CurrentMoveSpeed = characterData.MoveSpeed;
@@ -151,7 +156,11 @@ public class PlayerStats : MonoBehaviour
         CurrentMagnet = characterData.Magnet;
 
         //Spawneamos el arma o item pasivo
-        SpawnWeapon(characterData.StartingWeapon);
+        if(characterData.StartingWeapon != null)
+        {
+            SpawnWeapon(characterData.StartingWeapon);
+        }
+        
         //SpawnWeapon(secondWeaponTest);
         //SpawnPassiveItem(firstPassiveItemTest);
         //SpawnPassiveItem(secondPassiveItemTest);
@@ -165,6 +174,7 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentMightDisplay.text = "Poder: " + currentMight;
         GameManager.instance.currentProjectileSpeedDisplay.text = "Velocidad Proyectil: " + currentProjectileSpeed;
         GameManager.instance.currentMagnetDisplay.text = "Imán: " + currentMagnet;
+        
 
         UpdateHealthBar();
         UpdateExpBar();
@@ -182,10 +192,12 @@ public class PlayerStats : MonoBehaviour
             isInvincible = false;
         }
         Recover();
+        UpdateHealthBar();
     }
 
     public void IncreaseExperience(int amount)
     {
+        experienceSoundEffect.Play();
         experience += amount;
         LevelUpChecker();
         UpdateExpBar();
@@ -219,6 +231,7 @@ public class PlayerStats : MonoBehaviour
     {
         //Si el jugador no es invencible pasa el daño
         if(!isInvincible){
+            StartCoroutine(DamageFlash());
             CurrentHealth -= damage;
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
@@ -230,6 +243,20 @@ public class PlayerStats : MonoBehaviour
 
             UpdateHealthBar();
         }     
+    }
+
+    IEnumerator DamageFlash()
+    {
+        spriteRenderer.color = new Color(1, 0, 0, 1);
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.color = originalColor;
+    }
+
+    IEnumerator HealFlash()
+    {
+        spriteRenderer.color = new Color(0, 1, 0, 1);
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.color = originalColor;
     }
 
     void UpdateHealthBar()
@@ -249,6 +276,8 @@ public class PlayerStats : MonoBehaviour
 
     public void RestoreHealth(float amount)
     {
+        healthSoundEffect.Play();
+        StartCoroutine(HealFlash());
         //Cura si tiene menos vida
         if(CurrentHealth < characterData.Health)
         {

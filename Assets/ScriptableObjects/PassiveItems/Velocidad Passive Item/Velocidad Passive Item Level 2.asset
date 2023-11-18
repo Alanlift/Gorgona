@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf46e5ecc523204cab9f6d0418715dd, type: 3}
   m_Name: Velocidad Passive Item Level 2
   m_EditorClassIdentifier: 
-  multipler: 75
+  multipler: 40
   level: 2
   nextLevelPrefab: {fileID: 0}
   name: Aumento de velocidad Nivel 2

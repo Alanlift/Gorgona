@@ -7,11 +7,11 @@ public class ExperienceGem : Pickup, ICollectible
     public int experienceGranted;
     public void Start()
     {
-        Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+        //Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
     }
     public void Collect(Vector2 vector2)
     {
-        Perseguida(vector2, rb);
+        Perseguida(vector2);
     }
 
     private void OnDestroy()

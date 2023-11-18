@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c799c537d485a143ac37ecc6d22fa35, type: 3}
   m_Name: Minotauro
   m_EditorClassIdentifier: 
-  health: 100
-  moveSpeed: 5
-  damage: 50
+  health: 220
+  moveSpeed: 5.5
+  damage: 40

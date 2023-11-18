@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 2136577087
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 956365270, guid: c7ba7474d25a96f4aaefa036d583f894, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcad24200dec40c41adda5e7f680ce51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,9 +113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: Red potion
+  - name: Rat Heal
     itemPrefab: {fileID: 3773320682337278433, guid: 996feaf027d5a4f4a9187cac60ebd7de, type: 3}
-    dropRate: 50
+    dropRate: 100
 --- !u!61 &8467494974982100435
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.25, y: 7.28125}
+    oldSize: {x: 12.75, y: 21.28125}
     newSize: {x: 3.25, y: 7.28125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

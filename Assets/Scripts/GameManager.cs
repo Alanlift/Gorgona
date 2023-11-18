@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public GameState currentState;
     public GameState previousState;
+    public GameState bossState;
 
     [Header("UI")]
     public GameObject pauseScreen;
@@ -38,7 +38,12 @@ public class GameManager : MonoBehaviour
     public Text currentProjectileSpeedDisplay;
     public Text currentMagnetDisplay;
 
+    //Boss GO & UI
     public GameObject spawnBoss;
+    public GameObject healthBoss;
+    public Image healthBarBoss;
+    float maxHealthBoss;
+    public float currentHealthBoss;
 
     [Header("Stopwatch")]
     public float timeLimit; //Tiempo limite
@@ -55,13 +60,14 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {   //Chequeo de prevención por si hay otra instancia unica en el juego
+        stopwatchTime = timeLimit;
         if(instance == null)
         {
             instance = this;
         }
         else
         {
-            Debug.LogWarning("EXTRA"+ this +" DELETED");
+            //Debug.LogWarning("EXTRA"+ this +" DELETED");
             Destroy(gameObject);
         }
         DisableScreens();
@@ -83,7 +89,6 @@ public class GameManager : MonoBehaviour
                 {
                     isGameOver = true;
                     Time.timeScale = 0f;
-                    Debug.Log("Se perdió");
                     DisplayResults();
                 }
                 break;
@@ -92,13 +97,12 @@ public class GameManager : MonoBehaviour
                 {
                     choosingUpgrade = true;
                     Time.timeScale = 0f;
-                    Debug.Log("Mejoras");
                     levelUpScreen.SetActive(true);
                 }
                 CheckForPauseAndResume();
                 break;
             case GameState.BossFight:
-                
+                healthBarBoss.fillAmount = currentHealthBoss/maxHealthBoss;
                 CheckForPauseAndResume();
                 //UpdateStopWatch();
                 break;
@@ -107,7 +111,6 @@ public class GameManager : MonoBehaviour
                 {
                     isGameOver = true;
                     Time.timeScale = 0f;
-                    Debug.Log("Se ganó");
                     DisplayVictory();
                 }
                 break;
@@ -137,10 +140,17 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        if(currentState == GameState.Paused)
+        if(currentState == GameState.Paused && previousState != GameState.LevelUp)
         {
             ChangeState(previousState);
             Time.timeScale = 1f;
+            experienceBar.SetActive(true);
+            pauseScreen.SetActive(false);
+        }
+        else
+        {
+            ChangeState(previousState);
+            Time.timeScale = 0f;
             experienceBar.SetActive(true);
             pauseScreen.SetActive(false);
         }
@@ -150,7 +160,7 @@ public class GameManager : MonoBehaviour
 
     void CheckForPauseAndResume()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             if(currentState == GameState.Paused)
             {
@@ -195,12 +205,13 @@ public class GameManager : MonoBehaviour
 
     void UpdateStopWatch()
     {
-        stopwatchTime += Time.deltaTime;
-
+        //stopwatchTime += Time.deltaTime; Ahora es un temporizador
+        stopwatchTime -= Time.deltaTime;
         UpdateStopWatchDisplay();
 
-        if (stopwatchTime >= timeLimit)
+        if (stopwatchTime <= 0f) //Antes timeLimit > para reloj
         {
+            stopwatchDisplay.text = "";
             GameObject[] enemyDistances = GameObject.FindGameObjectsWithTag("Enemy");
             foreach(GameObject currentEnemy in enemyDistances)
             {
@@ -213,7 +224,10 @@ public class GameManager : MonoBehaviour
                 //player.transform.position = new Vector2(12,-2.5f);
                 player.transform.position = new Vector2(-12,-2.5f);
                 Instantiate(spawnBoss, new Vector2(12,-2.5f), Quaternion.identity);
+                healthBoss.SetActive(true);
+                maxHealthBoss = spawnBoss.GetComponent<EnemyStats>().enemyData.Health;
                 ChangeState(GameState.BossFight);
+                bossState = GameState.BossFight;
                 //Pasamos el audio acá si pq si no en el update no paraba de actualizarse y por eso no se reproducia
                 AudioSource audio = MainCamera.GetComponent<AudioSource>();
                 audio.volume = 40;
@@ -224,6 +238,7 @@ public class GameManager : MonoBehaviour
             //GameOver();
         }
     }
+
 
     void UpdateStopWatchDisplay()
     {
@@ -245,7 +260,15 @@ public class GameManager : MonoBehaviour
         choosingUpgrade = false;
         Time.timeScale = 1;//Resumimos la partida
         levelUpScreen.SetActive(false);
-        ChangeState(GameState.Gameplay);
+        if(bossState == GameState.BossFight)
+        {
+            ChangeState(GameState.BossFight);
+        }
+        else
+        {
+            ChangeState(GameState.Gameplay);
+        }
+        //ChangeState(GameState.Gameplay);
     }
     
 }
